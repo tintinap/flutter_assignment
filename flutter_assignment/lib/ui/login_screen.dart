@@ -66,7 +66,7 @@ class LoginState extends State<Login> {
                 child: Text("Register New Account"),
                 onPressed:() {
                   Navigator.pushNamed(context, "/register");
-                }
+                },
               ),
               alignment: Alignment.bottomRight,
             )
