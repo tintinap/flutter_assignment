@@ -27,7 +27,7 @@ class LoginState extends State<Login> {
               ),
               TextFormField(
                 decoration: InputDecoration(
-                  icon: Icon(Icons.email),
+                  icon: Icon(Icons.person),
                   // labelText: "Email",
                   hintText: "User Id",
                 ),
@@ -58,13 +58,16 @@ class LoginState extends State<Login> {
                     return 'user or password ไม่ถูกต้อง';
                 },
               ),
-              RaisedButton(
-                child: Text("Login"),
-                onPressed: () {
-                  if (_formKey.currentState.validate()) {
-                    Navigator.pushNamed(context, '/main');
-                  };
-                },
+              Container(
+                padding: EdgeInsets.only(top: 15),
+                child: RaisedButton(
+                  child: Text("Login"),
+                  onPressed: () {
+                    if (_formKey.currentState.validate()) {
+                      Navigator.pushNamed(context, '/main');
+                    };
+                  },
+                ),
               ),
               Container(
                 child: FlatButton(
