@@ -37,7 +37,8 @@ class LoginState extends State<Login> {
                   if (value.isEmpty) {
                     return "กรุณาระบุ user or password";
                   }
-                  if (value == 'admin') return 'user or password ไม่ถูกต้อง';
+                  if (value.toLowerCase() == 'admin')
+                    return 'user or password ไม่ถูกต้อง';
                 },
               ),
               TextFormField(
@@ -53,13 +54,16 @@ class LoginState extends State<Login> {
                   if (value.isEmpty) {
                     return "กรุณาระบุ user or password";
                   }
-                  if (value == 'admin') return 'user or password ไม่ถูกต้อง';
+                  if (value.toLowerCase() == 'admin') 
+                    return 'user or password ไม่ถูกต้อง';
                 },
               ),
               RaisedButton(
                 child: Text("Login"),
                 onPressed: () {
-                  _formKey.currentState.validate();
+                  if (_formKey.currentState.validate()) {
+                    Navigator.pushNamed(context, '/main');
+                  };
                 },
               ),
               Container(

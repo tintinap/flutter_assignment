@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 
-class Register extends StatefulWidget {
+class MainScreen extends StatefulWidget {
   @override
-  RegisterState createState() {
+  MainScreenState createState() {
 
-    return RegisterState();
+    return MainScreenState();
   }
 
 }
 
-class RegisterState extends State<Register> {
+class MainScreenState extends State<MainScreen> {
   final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-                    AppBar(
-                title: "Main",
-              )
+      appBar: AppBar(
+        title : Text("Main"),
+      ),
       body: Container(
         padding:EdgeInsets.all(25),
         child:Form(
