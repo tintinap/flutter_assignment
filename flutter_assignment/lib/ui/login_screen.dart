@@ -15,62 +15,64 @@ class LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Custom form"),
-      ),
-      body: Form(
-        key: _formKey,
-        child: ListView(
-          children: <Widget>[
-            Image.asset(
-              "resources/flutter_logo.png", 
-              height: 100,
-            ),
-            TextFormField(
-              decoration: InputDecoration(
-                icon: Icon(Icons.email),
-                // labelText: "Email",
-                hintText: "User Id",
+      body: Container(
+        padding:EdgeInsets.all(25),
+        child:Form(
+          key: _formKey,
+          child: ListView(
+            children: <Widget>[
+              Image.asset(
+                "resources/flutter_logo.png", 
+                height: 175,
               ),
-              keyboardType: TextInputType.emailAddress,
-              onSaved: (value) => print(value),
-              validator: (value){
-                if (value.isEmpty) {
-                  return "กรุณาระบุ user or password";
-                }
-              },
-            ),
-            TextFormField(
-              decoration: InputDecoration(
-                // labelText: "Password",
-                icon: Icon(Icons.lock),
-                hintText: "Password",
-              ),
-              obscureText: true,
-              keyboardType: TextInputType.text,
-              onSaved: (value) => print(value),
-              validator: (value){
-                if (value.isEmpty) {
-                  return "กรุณาระบุ user or password";
-                }
-              },
-            ),
-            RaisedButton(
-              child: Text("Login"),
-              onPressed: () {
-                _formKey.currentState.validate();
-              },
-            ),
-            Container(
-              child: FlatButton(
-                child: Text("Register New Account"),
-                onPressed:() {
-                  Navigator.pushNamed(context, "/register");
+              TextFormField(
+                decoration: InputDecoration(
+                  icon: Icon(Icons.email),
+                  // labelText: "Email",
+                  hintText: "User Id",
+                ),
+                keyboardType: TextInputType.emailAddress,
+                onSaved: (value) => print(value),
+                validator: (value){
+                  if (value.isEmpty) {
+                    return "กรุณาระบุ user or password";
+                  }
+                  if (value == 'admin') return 'user or password ไม่ถูกต้อง';
                 },
               ),
-              alignment: Alignment.bottomRight,
-            )
-          ],
+              TextFormField(
+                decoration: InputDecoration(
+                  // labelText: "Password",
+                  icon: Icon(Icons.lock),
+                  hintText: "Password",
+                ),
+                obscureText: true,
+                keyboardType: TextInputType.text,
+                onSaved: (value) => print(value),
+                validator: (value){
+                  if (value.isEmpty) {
+                    return "กรุณาระบุ user or password";
+                  }
+                  if (value == 'admin') return 'user or password ไม่ถูกต้อง';
+                },
+              ),
+              RaisedButton(
+                child: Text("Login"),
+                onPressed: () {
+                  _formKey.currentState.validate();
+                },
+              ),
+              Container(
+                child: FlatButton(
+                  child: Text("Register New Account"),
+                  onPressed:() {
+                    Navigator.pushNamed(context, "/register");
+                  },
+                ),
+                alignment: Alignment.bottomRight,
+              )
+            ],
+          ),
         ),
       ),
     );

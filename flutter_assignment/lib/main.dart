@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'ui/login_screen.dart';
+import 'ui/register_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
       routes : {
         // "/" : (context) => FirstScreen(),
         "/" : (context) => Login(),
+        "/register" : (context) => Register(),
         // "/second" : (context) => SecondScreen(),
         // "/detail" : (context) => DetailScreen(title: 'Detail',) no need for goto with parameter
       }
