@@ -61,6 +61,8 @@ class LoginState extends State<Login> {
               Container(
                 padding: EdgeInsets.only(top: 15),
                 child: RaisedButton(
+                  color: Theme.of(context).primaryColor,
+                  textColor: Colors.white,
                   child: Text("Login"),
                   onPressed: () {
                     if (_formKey.currentState.validate()) {

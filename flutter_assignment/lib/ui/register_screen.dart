@@ -30,7 +30,7 @@ class RegisterState extends State<Register> {
               TextFormField(
                 decoration : InputDecoration(
                   icon: Icon(Icons.mail),
-                  hintText: 'User Id'
+                  hintText: 'Email Address'
                 ),
                 onSaved: (value) => print(value),
                 validator: (value) {
@@ -63,7 +63,7 @@ class RegisterState extends State<Register> {
               TextFormField(
                 decoration: InputDecoration(
                   icon: Icon(Icons.lock),
-                  hintText: "Password",
+                  hintText: "Confirm Password",
                 ),
                 obscureText: true,
                 keyboardType: TextInputType.text,
@@ -81,6 +81,8 @@ class RegisterState extends State<Register> {
               Container(
                 padding: EdgeInsets.only(top:15),
                 child: RaisedButton(
+                  color: Theme.of(context).primaryColor,
+                  textColor: Colors.white,
                   child: Text("CONTINUE"),
                   splashColor: Colors.green,
                   onPressed: () {
